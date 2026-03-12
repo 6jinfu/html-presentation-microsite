@@ -1,0 +1,7 @@
+interface:
+  display_name: "HTML Presentation Microsite"
+  short_description: "Build keynote-style HTML report microsites"
+  default_prompt: "Use $html-presentation-microsite to turn this outline into a premium multi-page HTML presentation."
+
+policy:
+  allow_implicit_invocation: true
