@@ -85,3 +85,12 @@ Use this when the user has content, PRD notes, or a report outline that needs to
 - Reserve the most visually dynamic layout for the showcase slide, not the entire deck
 - In 10-15 page decks, group slides into chapters so the narrative feels intentional instead of merely longer
 - Not every page needs equal visual intensity; use calm slides to support standout slides
+- For Chinese decks, decide title line count slide by slide; do not leave major title wrapping to default browser behavior
+- If a title must be exactly 1, 2, or 3 lines, mark it explicitly in the working outline before implementation
+- If a card contains only short text, shrink the card height instead of preserving empty space for symmetry
+- When a slide has one hero card and several support cards, allow the support cards to be shorter if their copy is short
+- After implementation, do a visual QA pass specifically for:
+  - title overflow
+  - title container width mismatches
+  - card text bleed
+  - empty lower halves in text cards

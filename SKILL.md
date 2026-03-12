@@ -98,6 +98,61 @@ Builds high-end HTML presentations that feel like a keynote, boardroom report, o
 - Avoid equal-weight layouts; one element should dominate
 - Preserve breathing room; premium work looks intentional because it is not overfilled
 
+## Chinese typography rules
+- When the deck is primarily in Chinese, do not reuse English-first title behavior blindly
+- Use Chinese-friendly font stacks:
+  - serif display: `"Songti SC", "Noto Serif SC", "Source Han Serif SC", serif`
+  - sans body: `"PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif`
+- Do not rely on generic `max-width: 10ch` style headline constraints for Chinese titles; they often make titles collapse into narrow vertical-looking blocks
+- Prefer slide-specific title widths instead of one global title width rule
+- Use manual line breaks for long Chinese titles on presentation-critical slides
+- If the user requests `1 line`, `2 lines`, or `3 lines`, implement it explicitly with separate block lines, not just `<br>` and hope the browser preserves the rhythm
+- Body copy can use softer wrapping rules, but titles should be deliberately line-managed
+- Avoid aggressive global rules like `word-break: keep-all` if they distort normal Chinese layout across the deck
+
+## Card and container rules
+- Card content must stay inside cards. Always constrain cards with:
+  - `overflow: hidden`
+  - grid/flex children using `min-width: 0`
+  - page-level checks for text bleed on large titles and long body copy
+- When a slide uses cards with short copy, reduce card height to fit content. Do not leave large empty bottoms just to maintain a rigid grid
+- For report decks, prefer content-driven card heights on text-heavy pages over forcing equal-height cards everywhere
+- If only one card on a page has heavy content, let that card breathe and compress adjacent cards rather than stretching all cards equally
+- For title cards, remove inherited narrow width constraints from the heading if the body text already fits the container correctly
+
+## Title layout rules
+- Distinguish between:
+  - one-line titles
+  - controlled two-line titles
+  - controlled three-line titles
+- For controlled line layouts, use per-line block elements so each line occupies the card width intentionally
+- Never let browser auto-wrap decide the final layout for executive-report titles in Chinese
+- If a title must fill more of a hero card, first widen the title container to the card width; only then tune font size and line height
+- When a title still looks too narrow, inspect inherited width constraints before shrinking typography further
+- Check for duplicated CSS selectors that override headline sizes later in the file
+
+## Report-mode layout rules
+- In 10-15 page report decks, do not keep showcase-mode compositions unchanged
+- Report slides need calmer, more readable layouts with stricter chapter rhythm
+- Use visual intensity selectively: a few strong hero slides, then quieter proof/detail slides
+- Do not force every slide into the same “hero left + cards right” structure
+- For text-heavy strategy slides, use broader reading columns and reduce decorative empty space
+- For capability/proof pages, split dense ideas across multiple calmer cards instead of oversized empty glass panels
+
+## QA rules for real usability
+- Before declaring the deck complete, verify every slide for:
+  - title lines match requested line count
+  - titles do not overflow or collapse into narrow columns
+  - body copy does not bleed outside cards
+  - cards with little text are not visibly too tall
+  - no duplicated style rules are fighting each other
+  - OpenClaw / product names are not awkwardly split across lines
+- For Chinese decks specifically:
+  - scan all long titles at desktop width
+  - inspect hero cards where title and body share the same container
+  - inspect chapter-closing slides where oversized serif titles can easily overflow
+- If screenshots from the user reveal one broken slide, do not assume it is isolated. Re-check the same layout pattern on other slides before finishing
+
 ## Motion rules
 - Default to `cubic-bezier(0.16, 1, 0.3, 1)` unless the brief needs a different feel
 - Use 0.7s-1.2s for major transitions and 0.3s-0.5s for hover/detail transitions
@@ -127,6 +182,7 @@ Builds high-end HTML presentations that feel like a keynote, boardroom report, o
 - Prefer a self-contained HTML demo unless the repo already has a frontend stack
 - If building directly, keep CSS and JS readable and structured by slide system, motion system, and showcase components
 - If only writing prompts, output a ready-to-paste prompt, not notes about how to write one
+- If the deck is Chinese and intended for actual presentation, assume at least one revision pass will be needed for line breaks and card fit unless the user explicitly says rough prototype is fine
 
 ## Do not
 - Do not produce a generic landing page when the brief asks for a presentation
@@ -134,3 +190,5 @@ Builds high-end HTML presentations that feel like a keynote, boardroom report, o
 - Do not overload slides with long paragraphs or dense bullet lists
 - Do not use flashy motion that weakens the premium tone
 - Do not rely on interaction alone; each slide must still read well in a static state
+- Do not trust globally inherited headline width constraints on Chinese slides
+- Do not leave fixed-height cards with obviously empty lower halves when the page is text-light

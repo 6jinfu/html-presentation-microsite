@@ -38,6 +38,14 @@ Visual design:
 - Background images should be desaturated, darkened, or grayscale by default, with selective color reveal on active states.
 - Add gradient overlays so text remains readable at all times.
 - The design should feel premium, sharp, and art-directed rather than template-like.
+- If the deck is primarily in Chinese:
+  - use Chinese-friendly font stacks for headline and body text
+  - do not use a single global headline width limit like `max-width: 10ch`
+  - explicitly control whether each important title is 1 line, 2 lines, or 3 lines
+  - for forced multi-line titles, implement each line as its own block element so the browser does not re-wrap unexpectedly
+  - make title width follow the card/container width before reducing font size
+  - keep card body text inside cards with `min-width: 0` on grid/flex children and `overflow: hidden` on cards where needed
+  - adjust card heights to actual copy length instead of forcing all cards to match if that creates empty lower space
 
 Interactive showcase slide:
 - Include one slide featuring the main memorable interaction.
@@ -61,10 +69,13 @@ Code and implementation:
 - Ensure smooth performance and responsive scaling for large desktop screens.
 - Optimize for presentation/demo use rather than mobile-first browsing.
 - Use semantic structure and maintainable code organization.
+- Avoid duplicated CSS selectors that redefine the same slide headline later in the file unless intentional.
+- Add page-level CSS overrides for slides with unusually long Chinese headlines instead of relying only on global typography rules.
 
 Important creative direction:
 - Make it feel like an award-quality interactive report or keynote microsite.
 - Do not make it look like a generic SaaS website.
 - Do not use bland cards-on-white layouts.
 - Prioritize immersive storytelling, motion continuity, and premium editorial composition.
+- Prioritize direct usability for real presentations, not just a visually impressive first render.
 ```

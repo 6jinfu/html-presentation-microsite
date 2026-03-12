@@ -1,7 +1,7 @@
 interface:
   display_name: "HTML Presentation Microsite"
-  short_description: "Build keynote-style HTML report microsites"
-  default_prompt: "Use $html-presentation-microsite to turn this outline into a premium multi-page HTML presentation."
+  short_description: "Build Chinese-friendly HTML presentation decks"
+  default_prompt: "Use $html-presentation-microsite to turn this outline into a premium multi-page HTML presentation, auto-select slide count, and handle Chinese title wrapping explicitly."
 
 policy:
   allow_implicit_invocation: true
