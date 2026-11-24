@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "凌川零售协同概念展示",
+    "lang": "zh-CN",
+    "mode": "showcase",
+    "theme": "showcase",
+    "density": "calm",
+    "audience": "第一次接触这个产品的业务负责人",
+    "venue": "概念展示，大屏",
+    "decision": "是否进入下一轮试点设计",
+    "narrative": "六页说明协同值不值得继续，不展开执行细节。",
+    "formats": ["html"],
+    "footer": "凌川零售协同 · 示例数据",
+    "gaps": []
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "kicker": "概念展示",
+      "title_lines": ["协同可以更安静"],
+      "subtitle": "把异常留在值班台，而不是留在门店。",
+      "meta": "示例概念页，不是客户材料",
+      "callout": "今天只决定要不要做下一轮试点设计"
+    },
+    {
+      "id": "agenda",
+      "layout": "agenda",
+      "kicker": "三步",
+      "title_lines": ["先看值不值得继续"],
+      "items": [
+        {"index": "01", "title": "一个判断", "summary": "异常不消化，扩店没有意义"},
+        {"index": "02", "title": "两个数字", "summary": "增长和投诉来自同一条链"},
+        {"index": "03", "title": "一个请求", "summary": "同意做下一轮试点设计"}
+      ]
+    },
+    {
+      "id": "thesis",
+      "layout": "thesis",
+      "kicker": "判断",
+      "title_lines": ["值得继续，但先不扩店"],
+      "supports": [
+        {"title": "增长看得到", "body": "试点周销差是正的"},
+        {"title": "体验还不稳", "body": "缺货投诉仍高于对照"}
+      ]
+    },
+    {
+      "id": "metrics",
+      "layout": "metrics",
+      "kicker": "证据",
+      "title_lines": ["两个数就够判断"],
+      "items": [
+        {"value": "+6.4pt", "label": "周销差距", "note": "相对对照店", "bar": 64},
+        {"value": "5.2天", "label": "异常闭环", "note": "还高于2天", "bar": 38},
+        {"value": "+18%", "label": "缺货投诉", "note": "相对对照店", "bar": 18}
+      ],
+      "callout": "数字是示例，用来看版式，不是经营结论。"
+    },
+    {
+      "id": "summary",
+      "layout": "summary",
+      "kicker": "收束",
+      "title_lines": ["概念页只留三句话"],
+      "items": [
+        {"title": "问题真实", "body": "履约异常还在拖体验"},
+        {"title": "方向成立", "body": "协同比各自补救更清楚"},
+        {"title": "范围要小", "body": "下一轮仍限定在试点"}
+      ]
+    },
+    {
+      "id": "close",
+      "layout": "close",
+      "kicker": "请求",
+      "title_lines": ["请决定是否进入设计"],
+      "ask": "同意做下一轮试点设计吗？",
+      "options": [
+        {"title": "同意", "body": "只出试点方案，不新增门店"},
+        {"title": "暂停", "body": "先补齐真实经营数据再谈"}
+      ],
+      "note": "这是示例页，不代表任何客户决定。"
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "凌川零售协同第三季度业务复盘",
+    "lang": "zh-CN",
+    "mode": "report",
+    "theme": "boardroom",
+    "density": "standard",
+    "audience": "零售事业部总经理与区域运营负责人",
+    "venue": "季度业务会，会议室投影",
+    "decision": "维持12家试点，还是按门槛扩到40家",
+    "narrative": "增长已经出现，但履约异常还没被消化。先过门槛，再扩大试点。",
+    "formats": ["html", "pdf"],
+    "footer": "凌川零售协同 · 示例数据",
+    "gaps": ["区域编制是否增加"]
+  },
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "kicker": "2026年第三季度 · 业务复盘",
+      "title_lines": ["试点可以扩大", "但要先收紧履约"],
+      "subtitle": "给零售事业部的决策页。数字都是示例。",
+      "meta": "内部例会 · 2026-10-16",
+      "callout": "请决定：维持12家，或按门槛扩到40家"
+    },
+    {
+      "id": "agenda",
+      "layout": "agenda",
+      "kicker": "今天的路径",
+      "title_lines": ["这次只回答一个决定"],
+      "items": [
+        {"index": "01", "title": "试点现状", "summary": "12家店已经跑完一个季度"},
+        {"index": "02", "title": "增长与异常", "summary": "两边来自同一条履约链"},
+        {"index": "03", "title": "扩店约束", "summary": "不达标会放大缺货投诉"},
+        {"index": "04", "title": "今天的决定", "summary": "有条件扩店，而不是直接铺开"}
+      ]
+    },
+    {
+      "id": "chapter-now",
+      "layout": "chapter",
+      "kicker": "01 · 现状",
+      "index": "01",
+      "title_lines": ["先看试点是否站得住"],
+      "statement": "这一章只确认增长是否成立，异常是否还在。",
+      "aside": "后两页的数字是示例口径。"
+    },
+    {
+      "id": "thesis",
+      "layout": "thesis",
+      "kicker": "01 · 现状",
+      "title_lines": ["扩大试点的收益", "取决于异常先被消化"],
+      "supports": [
+        {"title": "周销仍在涨", "body": "试点店周销比对照高6.4个点"},
+        {"title": "体验被拖住", "body": "缺货投诉比对照店高18%"},
+        {"title": "闭环仍然慢", "body": "发现到关闭平均需要5.2天"}
+      ]
+    },
+    {
+      "id": "metrics",
+      "layout": "metrics",
+      "kicker": "01 · 现状",
+      "title_lines": ["四个数决定能不能扩"],
+      "items": [
+        {"value": "91.4%", "label": "履约准时率", "note": "门槛是95%", "bar": 91},
+        {"value": "5.2天", "label": "异常闭环", "note": "门槛是2天", "bar": 38},
+        {"value": "+6.4pt", "label": "周销差距", "note": "相对对照店", "bar": 64},
+        {"value": "+18%", "label": "缺货投诉", "note": "相对对照店", "bar": 18}
+      ],
+      "callout": "增长已经出现，履约还没到可复制的水位。"
+    },
+    {
+      "id": "choice",
+      "layout": "comparison",
+      "kicker": "02 · 取舍",
+      "title_lines": ["直接扩店会把投诉一起放大"],
+      "left": {
+        "title": "维持12家",
+        "points": ["继续收集异常样本", "增量先锁在试点", "本季不加区域编制"]
+      },
+      "right": {
+        "title": "直接扩到40家",
+        "points": ["覆盖更多城市等级", "投诉会按店数放大", "值班接不住5天闭环"]
+      },
+      "verdict": "建议不走右侧。先过门槛，再讨论40家。"
+    },
+    {
+      "id": "chapter-proof",
+      "layout": "chapter",
+      "kicker": "02 · 证据",
+      "index": "02",
+      "title_lines": ["异常不是一类问题"],
+      "statement": "到货、库存、临期要分开治，值班才有抓手。",
+      "aside": "占比来自示例拆分，复盘时请换系统导出。"
+    },
+    {
+      "id": "causes",
+      "layout": "cards",
+      "kicker": "02 · 证据",
+      "title_lines": ["三类异常占了闭环时间"],
+      "items": [
+        {"index": "A", "title": "到货延迟", "body": "占异常单46%，主因是仓到店波次不稳。"},
+        {"index": "B", "title": "库存不准", "body": "占31%，主因是盘点后补单时差。"},
+        {"index": "C", "title": "临期未处理", "body": "占23%，主因是缺少当日清退。"}
+      ],
+      "note": "三类合计为100%，只说明结构，不是考核分。"
+    },
+    {
+      "id": "plan",
+      "layout": "roadmap",
+      "kicker": "03 · 路径",
+      "title_lines": ["用四周把闭环压到两天"],
+      "phases": [
+        {"window": "第1周", "title": "对账", "body": "统一异常单口径，停掉口头跟踪"},
+        {"window": "第2周", "title": "值班", "body": "每天清掉超过48小时的单"},
+        {"window": "第3周", "title": "抽检", "body": "每城抽3家，核对库存和临期"},
+        {"window": "第4周", "title": "评估", "body": "只看准时率和闭环天数"}
+      ]
+    },
+    {
+      "id": "chapter-gate",
+      "layout": "chapter",
+      "kicker": "03 · 门槛",
+      "index": "03",
+      "title_lines": ["扩店要先过两道门槛"],
+      "statement": "准时率连续两周不低于95%，闭环不高于2天。",
+      "aside": "任一门槛失败，就维持12家到下次复盘。"
+    },
+    {
+      "id": "summary",
+      "layout": "summary",
+      "kicker": "收束",
+      "title_lines": ["会上只需要记住三件事"],
+      "items": [
+        {"title": "增长有效", "body": "试点周销差为正，值得继续做"},
+        {"title": "履约不够", "body": "准时率和闭环都还没到门槛"},
+        {"title": "有条件扩", "body": "四周后再决定40家，今天不铺开"}
+      ]
+    },
+    {
+      "id": "close",
+      "layout": "close",
+      "kicker": "请拍板",
+      "title_lines": ["请今天拍板一件事"],
+      "ask": "批准有条件扩店，还是维持12家？",
+      "options": [
+        {"title": "批准", "body": "按四周计划执行，第4周用同一张表复盘"},
+        {"title": "维持", "body": "停止新店选型，值班留在现有12家"}
+      ],
+      "note": "区域编制是否增加，本次不决定。"
+    }
+  ]
+}

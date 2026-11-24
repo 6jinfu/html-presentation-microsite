@@ -2,6 +2,8 @@
 
 Use this when the user has content, PRD notes, or a report outline that needs to become a presentation-style HTML deck.
 
+大纲确定后，把每一页写进 `deck.json`：判断句放进 `title_lines`，一页只用一种版式。字段和字数限制见 `references/deck.schema.json`。
+
 ## Automatic mode selection
 
 - Use 6-8 slides when the material is concise, visual-first, or centered on one main idea

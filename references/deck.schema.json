@@ -1,0 +1,99 @@
+{
+  "$comment": "汇报 deck.json 契约。可执行校验读取本文件，不另写一套限制。本技能只覆盖 HTML 汇报，不描述简历或通用文档。",
+  "modes": {
+    "showcase": [6, 8],
+    "report": [10, 15]
+  },
+  "formats": ["html", "pdf"],
+  "languages": ["zh-CN", "en"],
+  "topicLabels": ["目录", "背景", "总结", "议程", "谢谢", "概述", "介绍"],
+  "limits": {
+    "doc_title": 40,
+    "audience": 80,
+    "venue": 40,
+    "decision": 80,
+    "narrative": 160,
+    "footer": 36,
+    "gap": 40,
+    "kicker": 28,
+    "title_line": 18,
+    "subtitle": 42,
+    "meta_line": 36,
+    "callout": 42,
+    "statement": 42,
+    "aside": 36,
+    "index": 4,
+    "item_title": 16,
+    "item_body": 36,
+    "summary": 32,
+    "metric_value": 8,
+    "metric_label": 12,
+    "metric_note": 16,
+    "point": 22,
+    "phase_title": 8,
+    "phase_window": 8,
+    "phase_body": 28,
+    "ask": 36,
+    "note": 42,
+    "verdict": 36
+  },
+  "layouts": {
+    "cover": {
+      "required": ["title_lines", "kicker", "subtitle", "meta", "callout"],
+      "title_lines": [1, 2]
+    },
+    "agenda": {
+      "required": ["title_lines", "items"],
+      "title_lines": [1, 2],
+      "items": [3, 5],
+      "itemRequired": ["index", "title", "summary"]
+    },
+    "chapter": {
+      "required": ["title_lines", "index", "statement"],
+      "title_lines": [1, 2]
+    },
+    "thesis": {
+      "required": ["title_lines", "supports"],
+      "title_lines": [1, 2],
+      "items": [2, 3],
+      "itemsKey": "supports",
+      "itemRequired": ["title", "body"]
+    },
+    "metrics": {
+      "required": ["title_lines", "items"],
+      "title_lines": [1, 2],
+      "items": [3, 4],
+      "itemRequired": ["value", "label", "note", "bar"]
+    },
+    "comparison": {
+      "required": ["title_lines", "left", "right", "verdict"],
+      "title_lines": [1, 2]
+    },
+    "cards": {
+      "required": ["title_lines", "items"],
+      "title_lines": [1, 2],
+      "items": [3, 4],
+      "itemRequired": ["index", "title", "body"]
+    },
+    "roadmap": {
+      "required": ["title_lines", "phases"],
+      "title_lines": [1, 2],
+      "items": [3, 4],
+      "itemsKey": "phases",
+      "itemRequired": ["title", "window", "body"]
+    },
+    "summary": {
+      "required": ["title_lines", "items"],
+      "title_lines": [1, 2],
+      "items": [3, 4],
+      "itemRequired": ["title", "body"]
+    },
+    "close": {
+      "required": ["title_lines", "ask", "options"],
+      "title_lines": [1, 2],
+      "items": [2, 2],
+      "itemsKey": "options",
+      "itemRequired": ["title", "body"]
+    }
+  }
+}
