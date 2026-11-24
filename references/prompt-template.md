@@ -1,5 +1,7 @@
 # Prompt Template
 
+可放映的 HTML 优先写 `deck.json`，再用 `scripts/render_deck.py` 生成。步骤见 `references/deck-contract.md`。下面这段提示词只用于「只要提示词、不直接生成文件」的场合。
+
 Use this when the user wants a generator-ready prompt for a premium HTML presentation.
 
 ```text

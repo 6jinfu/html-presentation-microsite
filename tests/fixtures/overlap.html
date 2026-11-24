@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  .slide, .slide-canvas { width: 1920px; height: 1080px; position: relative; }
+  .box { position: absolute; left: 80px; top: 80px; width: 240px; height: 80px; overflow: hidden; }
+  .other { left: 120px; top: 110px; }
+  .frame { min-width: 0; overflow: hidden; }
+  @page { size: 13.333in 7.5in; margin: 0; }
+</style>
+</head>
+<body>
+<section class="slide is-active" data-layout="cards" data-id="overlap">
+  <div class="slide-canvas">
+    <p class="box" data-fit>左侧说明不该压住另一块说明。</p>
+    <p class="box other" data-fit>右侧说明和左侧叠在一起。</p>
+  </div>
+</section>
+</body>
+</html>

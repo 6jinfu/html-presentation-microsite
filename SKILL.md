@@ -1,6 +1,6 @@
 ---
 name: "html-presentation-microsite"
-description: "Use when the user wants a premium multi-page HTML presentation, keynote-style microsite, or slide-based report page with full-screen sections, refined motion, editorial layout, image-led storytelling, desktop showcase behavior, and standout interactions such as expanding accordions."
+description: "Use when the user wants a premium multi-page HTML presentation, keynote-style microsite, slide-based report, 业务汇报, or 季度复盘. Builds a self-contained 16:9 HTML deck from deck.json, with Chinese title lines and runnable layout checks. Does not create editable PPTX."
 ---
 
 # HTML Presentation Microsite
@@ -18,6 +18,35 @@ Builds high-end HTML presentations that feel like a keynote, boardroom report, o
 - Prompt only: 先输出高质量生成提示词
 - Prototype: 直接产出单文件 HTML/CSS/JS demo
 - Content conversion: 把 PRD、提纲、汇报结构改写成网页化 slide deck
+
+## 生成可放映 HTML 的路径
+
+只要提示词时，仍用 `references/prompt-template.md`。一旦交付可放映的文件，按这个顺序做，不要从零写一套 CSS。
+
+| 步骤 | 再读 |
+| --- | --- |
+| 锁定听众、场合、决策和页数 | `references/deck-contract.md` |
+| 写 `deck.json` | `references/deck.schema.json` |
+| 选版式、密度和主题 | `references/layouts.md`、`assets/tokens.json` |
+
+1. 标题写成判断句，放进 `title_lines`。每一行都会变成独立的标题行。
+2. `meta.mode` 仍按本文件的 showcase / report 规则选择。脚本不猜页数。
+3. 生成并检查：
+
+```bash
+python3 scripts/render_deck.py deck.json -o deck.html
+python3 scripts/check_deck.py deck.json --html deck.html
+python3 scripts/check_layout.py deck.html
+python3 scripts/export_pdf.py deck.html -o deck.pdf --expect-slides 12
+```
+
+`check_deck.py` 不过就不要交付。`check_layout.py` 需要本机 Chrome，检查溢出、重叠、近乎空白的内容页和中文是否画出。没有 Chrome 时退出码是 2，要写明版式未在浏览器中验证。
+
+## 格式边界
+
+- HTML：自包含单文件，是默认交付物。
+- PDF：只有 `export_pdf.py` 成功，并且页数等于幻灯片数、页面为 16:9 时，才说 PDF 可用。
+- 可编辑 PPTX：不生成。用户要 PPTX 时直接说明这个边界。
 
 ## Presentation modes
 - Showcase mode: 6-8 页，适合概念展示、品牌氛围、创意提案、主视觉驱动的短 deck

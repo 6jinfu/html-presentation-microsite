@@ -1,0 +1,15 @@
+本仓库的代码、模板和示例由 html-presentation-microsite 以 MIT 许可证发布。
+
+设计原则参考了 Tw93 的 Kami（https://github.com/tw93/Kami），MIT License，Copyright (c) 2026 Tw93。
+对照提交：27177605ad0007bc29fa3f9c203c347aa91074e2。
+
+参考过的文件：
+
+- skills/kami/SKILL.md
+- skills/kami/references/schemas/slides.json
+- skills/kami/references/deck-preflight.md
+- skills/kami/references/design.md 第 8 节
+- skills/kami/references/tokens.json
+- skills/kami/assets/templates/slides-weasy.html
+
+这些文件没有整文件复制进本仓库。本仓库没有使用仓耳今楷或其他随 Kami 分发的字体文件。
